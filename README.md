@@ -1,16 +1,120 @@
-# React + Vite
+# 🛒 ShopEasy — Modern React E-Commerce Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive e-commerce frontend built using **React + Vite**.
+This project demonstrates a clean UI, reusable components, and a real-world shopping website layout suitable for portfolio and interview presentation.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## React Compiler
+👉 https://your-project-link.vercel.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* 🛍️ Product listing interface
+* 🔍 Search & filtering UI
+* 🛒 Add-to-cart functionality (UI level)
+* 📱 Fully responsive design
+* ⚡ Fast performance with Vite
+* 🎨 Modern and clean user interface
+
+---
+
+## 🛠️ Tech Stack
+
+* **Frontend:** React.js
+* **Build Tool:** Vite
+* **Styling:** CSS
+* **Deployment:** Vercel
+* **Version Control:** Git & GitHub
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+ ├── components/
+ ├── pages/
+ ├── App.jsx
+ ├── main.jsx
+ └── styles/
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+Clone the repository:
+
+```
+git clone https://github.com/your-username/your-repo-name.git
+```
+
+Navigate to project folder:
+
+```
+cd your-repo-name
+```
+
+Install dependencies:
+
+```
+npm install
+```
+
+Run development server:
+
+```
+npm run dev
+```
+
+---
+
+## 📦 Build for Production
+
+```
+npm run build
+```
+
+---
+
+## 🚀 Deployment
+
+This project is deployed using **Vercel** with GitHub integration.
+
+---
+
+## 🎯 Purpose of Project
+
+This project was created to:
+
+* Practice React fundamentals
+* Learn real-world project structure
+* Understand GitHub deployment workflow
+* Demonstrate frontend development skills
+
+---
+
+## 👨‍💻 Author
+
+**Suyash Gupta**
+MCA Student | Aspiring Software Developer
+
+---
+
+## ⭐ Future Improvements
+
+* Backend integration
+* Authentication system
+* Payment gateway
+* Database connectivity
+* Admin dashboard
+
+---
+
+## 📜 License
+
+This project is for educational and portfolio purposes.
