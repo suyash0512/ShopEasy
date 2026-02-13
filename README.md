@@ -7,7 +7,7 @@ This project demonstrates a clean UI, reusable components, and a real-world shop
 
 ## 🚀 Live Demo
 
-👉 https://your-project-link.vercel.app
+👉 https://shoppeasy.vercel.app
 
 ---
 
