@@ -35,13 +35,38 @@ This project demonstrates a clean UI, reusable components, and a real-world shop
 ## 📂 Project Structure
 
 ```
-src/
- ├── components/
- ├── pages/
- ├── App.jsx
- ├── main.jsx
- └── styles/
-```
+my-react-app/
+│
+├── public/
+│   └── vite.svg
+│
+├── src/
+│   ├── assets/              # Static images & assets
+│   │
+│   ├── components/          # Reusable UI components
+│   │   ├── Navbar.jsx
+│   │   └── ProductCard.jsx
+│   │
+│   ├── context/             # Global state management
+│   │   └── CartContext.jsx
+│   │
+│   ├── data/                # Static product data
+│   │   └── products.js
+│   │
+│   ├── pages/               # Main application pages
+│   │   ├── Home.jsx
+│   │   ├── Cart.jsx
+│   │   └── ProductDetails.jsx
+│   │
+│   ├── App.jsx              # Root component
+│   ├── App.css              # App styles
+│   ├── main.jsx             # Entry point
+│   └── index.css            # Global styles
+│
+├── index.html
+├── package.json
+├── vite.config.js
+└── README.md
 
 ---
 
