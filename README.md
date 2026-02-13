@@ -75,7 +75,7 @@ my-react-app/
 Clone the repository:
 
 ```
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/suyash0512/ShopEasy
 ```
 
 Navigate to project folder:
