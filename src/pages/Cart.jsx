@@ -10,21 +10,18 @@ import { Link } from "react-router-dom";
 // Cart component
 export default function Cart() {
 
-  // Extract required values and functions from CartContext
   const {
-    cart,               // array containing all cart items
-    increaseQuantity,   // function to increase item quantity
-    decreaseQuantity,   // function to decrease item quantity
-    removeItem          // function to remove item completely
+    cart,
+    increaseQuantity,
+    decreaseQuantity,
+    removeItem
   } = useContext(CartContext);
 
-  // Calculate total number of items in cart (sum of quantities)
   const totalItems = cart.reduce(
     (sum, item) => sum + item.quantity,
     0
   );
 
-  // Calculate subtotal price of all items
   const subtotal = cart.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
@@ -47,6 +44,7 @@ export default function Cart() {
           padding: "0 20px"
         }}
       >
+
         {/* ================= LEFT CART SECTION ================= */}
         <div
           style={{
@@ -57,6 +55,7 @@ export default function Cart() {
             overflow: "hidden"
           }}
         >
+
           {/* CART HEADER */}
           <div
             style={{
@@ -80,8 +79,19 @@ export default function Cart() {
           <div style={{ padding: "25px" }}>
             {cart.length === 0 ? (
               <>
-                <p>Your cart is empty.</p>
-                <Link to="/" style={{ fontWeight: "bold" }}>
+                <p style={{ marginBottom: "12px", fontSize: "16px" }}>
+                  Your cart is empty.
+                </p>
+
+                <Link
+                  to="/"
+                  style={{
+                    color: "#2563eb",
+                    fontWeight: "600",
+                    textDecoration: "underline",
+                    fontSize: "15px"
+                  }}
+                >
                   Continue Shopping
                 </Link>
               </>
@@ -90,15 +100,15 @@ export default function Cart() {
                 <div
                   key={item.id}
                   style={{
-                  display: "grid",
-                  gridTemplateColumns: "90px 1fr 120px 160px 80px",
-                  alignItems: "center",
-                  padding: "15px 0",
-                  borderBottom: "1px solid #e0e0e0"
+                    display: "grid",
+                    gridTemplateColumns: "90px 1fr 120px 160px 80px",
+                    alignItems: "center",
+                    padding: "15px 0",
+                    borderBottom: "1px solid #e0e0e0"
                   }}
                 >
 
-                  {/* 1️⃣ PRODUCT IMAGE */}
+                  {/* PRODUCT IMAGE */}
                   <img
                     src={item.image}
                     alt={item.title}
@@ -110,48 +120,46 @@ export default function Cart() {
                     }}
                   />
 
-                  {/* 2️⃣ PRODUCT NAME */}
-                  <div style={{ flex: 2, fontWeight: "bold" }}>
+                  {/* PRODUCT NAME */}
+                  <div style={{ fontWeight: "bold" }}>
                     {item.title}
                   </div>
 
-                  {/* 3️⃣ PRODUCT PRICE */}
-                  <div style={{ flex: 1 }}>
+                  {/* PRODUCT PRICE */}
+                  <div>
                     ₹{item.price}
                   </div>
 
-                  {/* 4️⃣ QUANTITY CONTROLLER */}
+                  {/* QUANTITY CONTROLLER */}
                   <div
                     style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "6px",
-                    background: "#1f2937",
-                    padding: "5px",
-                    borderRadius: "6px",
-                    color: "#ffffff",
-                    width: "fit-content",
-                    justifySelf: "center"
+                      display: "inline-flex",
+                      alignItems: "center",
+                      gap: "6px",
+                      background: "#1f2937",
+                      padding: "5px",
+                      borderRadius: "6px",
+                      color: "#ffffff",
+                      width: "fit-content",
+                      justifySelf: "center"
                     }}
                   >
-
                     <button
-                    onClick={() => decreaseQuantity(item.id)}
-                    disabled={item.quantity === 1}
-                    style={{
-                    width: "26px",
-                    height: "26px",
-                    background: "#111827",
-                    color: "#fff",
-                    border: "none",
-                    borderRadius: "4px",
-                    cursor: item.quantity === 1 ? "not-allowed" : "pointer",
-                    opacity: item.quantity === 1 ? 0.5 : 1
-                    }}
+                      onClick={() => decreaseQuantity(item.id)}
+                      disabled={item.quantity === 1}
+                      style={{
+                        width: "26px",
+                        height: "26px",
+                        background: "#111827",
+                        color: "#fff",
+                        border: "none",
+                        borderRadius: "4px",
+                        cursor: item.quantity === 1 ? "not-allowed" : "pointer",
+                        opacity: item.quantity === 1 ? 0.5 : 1
+                      }}
                     >
-                    −
-                  </button>
-
+                      −
+                    </button>
 
                     <div style={{ fontWeight: "bold", fontSize: "14px" }}>
                       {item.quantity}
@@ -173,20 +181,21 @@ export default function Cart() {
                     </button>
                   </div>
 
-                  {/* 5️⃣ DELETE TEXT (ALWAYS VISIBLE) */}
+                  {/* DELETE BUTTON */}
                   <button
                     onClick={() => removeItem(item.id)}
                     style={{
                       background: "none",
                       border: "none",
-                      color: "#2116e7",
+                      color: "#2563eb",
                       cursor: "pointer",
                       fontSize: "14px",
-                      fontWeight: "bold"
+                      fontWeight: "600"
                     }}
                   >
                     Delete
                   </button>
+
                 </div>
               ))
             )}
