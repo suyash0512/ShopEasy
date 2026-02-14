@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -12,14 +13,18 @@ function App() {
     <div
       style={{
         background: "#f1f3f6",
-        minHeight: "100vh"
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column"
       }}
     >
-      {/* GLOBAL CENTERED CONTAINER */}
+      {/* CENTERED CONTENT AREA */}
       <div
         style={{
           maxWidth: "1400px",
-          margin: "0 auto"
+          margin: "0 auto",
+          width: "100%",
+          flex: 1
         }}
       >
         <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
@@ -33,6 +38,9 @@ function App() {
           <Route path="/product/:id" element={<ProductDetails />} />
         </Routes>
       </div>
+
+      {/* FOOTER OUTSIDE CENTERED CONTAINER */}
+      <Footer />
     </div>
   );
 }
