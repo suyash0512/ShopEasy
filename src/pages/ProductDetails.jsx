@@ -42,9 +42,9 @@ export default function ProductDetails() {
   return (
     <div
       style={{
-        padding: "40px",
+        padding: "5px",
         background: "#f1f3f6",
-        minHeight: "100vh",
+        minHeight: "0vh",
         position: "relative"
       }}
     >
