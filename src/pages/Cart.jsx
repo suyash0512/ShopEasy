@@ -1,5 +1,5 @@
 // useContext hook is used to access values from CartContext
-import { useContext } from "react";
+import { useContext, useState} from "react";
 
 // Import CartContext to get cart data and cart-related functions
 import { CartContext } from "../context/CartContext";
@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 // Cart component
 export default function Cart() {
 
+  const [itemToDelete, setItemToDelete] = useState(null);
   const {
     cart,
     increaseQuantity,
@@ -182,19 +183,19 @@ export default function Cart() {
                   </div>
 
                   {/* DELETE BUTTON */}
-                  <button
-                    onClick={() => removeItem(item.id)}
-                    style={{
-                      background: "none",
-                      border: "none",
-                      color: "#2563eb",
-                      cursor: "pointer",
-                      fontSize: "14px",
-                      fontWeight: "600"
-                    }}
-                  >
-                    Delete
-                  </button>
+                 <button
+  onClick={() => setItemToDelete(item)}
+  style={{
+    background: "none",
+    border: "none",
+    color: "#2563eb",
+    cursor: "pointer",
+    fontSize: "14px",
+    fontWeight: "600"
+  }}
+>
+  Delete
+</button>
 
                 </div>
               ))
@@ -273,6 +274,78 @@ export default function Cart() {
           </div>
         )}
       </div>
+      {/* DELETE CONFIRMATION MODAL */}
+{itemToDelete && (
+  <div
+    style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      background: "rgba(0,0,0,0.4)",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      zIndex: 1000
+    }}
+  >
+    <div
+      style={{
+        background: "#ffffff",
+        padding: "30px",
+        borderRadius: "12px",
+        width: "350px",
+        textAlign: "center",
+        boxShadow: "0 10px 25px rgba(0,0,0,0.2)"
+      }}
+    >
+      <h3 style={{ marginBottom: "15px" }}>
+        Remove Item?
+      </h3>
+
+      <p style={{ marginBottom: "25px", color: "#555" }}>
+        Are you sure you want to remove
+        <br />
+        <strong>{itemToDelete.title}</strong>
+        <br />
+        from your cart?
+      </p>
+
+      <div style={{ display: "flex", gap: "15px", justifyContent: "center" }}>
+        <button
+          onClick={() => {
+            removeItem(itemToDelete.id);
+            setItemToDelete(null);
+          }}
+          style={{
+            padding: "10px 20px",
+            background: "#dc2626",
+            color: "#fff",
+            border: "none",
+            borderRadius: "6px",
+            cursor: "pointer"
+          }}
+        >
+          Yes
+        </button>
+
+        <button
+          onClick={() => setItemToDelete(null)}
+          style={{
+            padding: "10px 20px",
+            background: "#e5e7eb",
+            border: "none",
+            borderRadius: "6px",
+            cursor: "pointer"
+          }}
+        >
+          No
+        </button>
+      </div>
+    </div>
+  </div>
+)}
     </div>
   );
 }
