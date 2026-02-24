@@ -1,4 +1,4 @@
-# 🛒 ShopEasy — Modern React E-Commerce Frontend
+# 🛒 ShopEasy — Modern React E-Commerce Website
 
 A modern, responsive e-commerce frontend built using **React + Vite**.
 This project demonstrates a clean UI, reusable components, and a real-world shopping website layout suitable for portfolio and interview presentation.
