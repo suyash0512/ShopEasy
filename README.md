@@ -81,7 +81,7 @@ git clone https://github.com/suyash0512/ShopEasy
 Navigate to project folder:
 
 ```
-cd your-repo-name
+cd my-react-app
 ```
 
 Install dependencies:
